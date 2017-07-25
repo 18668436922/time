@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+window.onload=function()
+{
+	var curtime=new Date();//当前日期
+	var endtime=new Date('2019/6/6');//结束日期 safari中用／分隔时间，否则会显示NaN.
+	var lefttime=Math.ceil((endtime.getTime()-curtime.getTime())/(24*60*60*1000));
+	document.getElementById('time').innerHTML='距离活动结束时间还有：'+lefttime+'天';
+
+}   
+
+</script>
+</head>
+<body>
+<div>
+<p id="time"></p>
+</div>
+	
+</body>
+</html>

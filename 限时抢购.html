@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+window.onload=function()
+{
+	showtime();
+}
+function showtime()
+{
+	var nowtime=new Date();
+	var endtime=new Date('2019/6/6,12:00:00');//结束时间
+	var lefttime=parseInt((endtime.getTime()-nowtime.getTime())/1000);
+	var d=parseInt(lefttime/(24*60*60));
+	var h=parseInt(lefttime/(60*60)%24);
+	var m=parseInt(lefttime/60%60);
+	var s=parseInt(lefttime%60);
+	if(lefttime<=0)
+	{
+		document.getElementById('time').innerHTML='活动结束。';
+	}
+
+	document.getElementById('time').innerHTML='距离活动结束还有：'+d+'天'+h+'小时'+m+'分钟'+s+'秒';
+	setTimeout(showtime,500);
+}
+</script>
+</head>
+<body>
+<p id="time"></p>
+</body>
+</html>
